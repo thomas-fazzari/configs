@@ -17,7 +17,7 @@
   "editor.suggestSelection": "first",
   "editor.inlineSuggest.enabled": true,
 
-  "workbench.colorTheme": "Atom Just Black",
+  "workbench.colorTheme": "Pitch Black",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
   "workbench.statusBar.visible": false,
