@@ -1,0 +1,155 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.sln]
+indent_style = tab
+
+[*.{csproj,props,targets,nuspec,resx,config,xml}]
+indent_size = 2
+
+[*.{json,yml,yaml}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.sh]
+end_of_line = lf
+
+[*.cs]
+
+# Disable Roslyn formatting rules to let CSharpier handle it
+dotnet_diagnostic.IDE0055.severity = none
+
+# General Organization
+csharp_using_directive_placement = outside_namespace:warning
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+csharp_style_namespace_declarations = file_scoped:warning
+
+# Enforce collection expressions [1, 2] over new List<int> { 1, 2 }
+csharp_style_prefer_collection_expression = true:warning
+# Enforce primary constructors for classes and structs
+csharp_style_prefer_primary_constructors = true:warning
+# Enforce UTF-8 string literals
+csharp_style_prefer_utf8_string_literals = true:warning
+
+# Performance & static analysis
+# Force static on lambdas and local functions to prevent accidental allocations
+csharp_prefer_static_local_function = true:warning
+csharp_prefer_static_anonymous_function = true:warning
+
+# Pattern Matching & Null Checks
+csharp_style_pattern_matching_over_is_with_cast_check = true:warning
+csharp_style_pattern_matching_over_as_with_null_check = true:warning
+csharp_style_prefer_switch_expression = true:warning
+csharp_style_prefer_pattern_matching = true:warning
+csharp_style_prefer_not_pattern = true:warning
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
+csharp_style_prefer_null_check_over_type_check = true:warning
+
+# Variable Definitions
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:warning
+csharp_style_var_elsewhere = true:suggestion
+csharp_style_inlined_variable_declaration = true:warning
+csharp_style_deconstructed_variable_declaration = true:warning
+
+# Expression-bodied members
+# Using 'when_on_single_line' to allow CSharpier to expand them
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_constructors = when_on_single_line:suggestion
+csharp_style_expression_bodied_operators = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = true:warning
+csharp_style_expression_bodied_indexers = true:warning
+csharp_style_expression_bodied_accessors = true:warning
+csharp_style_expression_bodied_lambdas = true:warning
+csharp_style_expression_bodied_local_functions = when_on_single_line:suggestion
+
+# Code Cleanliness
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_property = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_event = false:warning
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+dotnet_style_predefined_type_for_member_access = true:warning
+
+# Modifiers & Parentheses
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
+dotnet_style_readonly_field = true:warning
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
+dotnet_code_quality_unused_parameters = all:warning
+csharp_style_unused_value_expression_statement_preference = discard_variable:suggestion
+csharp_style_unused_value_assignment_preference = discard_variable:suggestion
+
+# Naming Conventions
+# Interfaces: IPascalCase
+dotnet_naming_rule.interface_rule.symbols = interface_symbols
+dotnet_naming_rule.interface_rule.style = prefix_i_style
+dotnet_naming_rule.interface_rule.severity = warning
+dotnet_naming_symbols.interface_symbols.applicable_kinds = interface
+dotnet_naming_style.prefix_i_style.required_prefix = I
+dotnet_naming_style.prefix_i_style.capitalization = pascal_case
+
+# Generics: TPascalCase
+dotnet_naming_rule.type_parameter_rule.symbols = type_parameter_symbols
+dotnet_naming_rule.type_parameter_rule.style = prefix_t_style
+dotnet_naming_rule.type_parameter_rule.severity = warning
+dotnet_naming_symbols.type_parameter_symbols.applicable_kinds = type_parameter
+dotnet_naming_style.prefix_t_style.required_prefix = T
+dotnet_naming_style.prefix_t_style.capitalization = pascal_case
+
+# Private Fields: _camelCase
+dotnet_naming_rule.private_field_rule.symbols = private_field_symbols
+dotnet_naming_rule.private_field_rule.style = underscore_camel_style
+dotnet_naming_rule.private_field_rule.severity = warning
+dotnet_naming_symbols.private_field_symbols.applicable_kinds = field
+dotnet_naming_symbols.private_field_symbols.applicable_accessibilities = private, private_protected
+dotnet_naming_style.underscore_camel_style.required_prefix = _
+dotnet_naming_style.underscore_camel_style.capitalization = camel_case
+
+# Constants: PascalCase
+dotnet_naming_rule.constant_rule.symbols = constant_symbols
+dotnet_naming_rule.constant_rule.style = pascal_case_style
+dotnet_naming_rule.constant_rule.severity = warning
+dotnet_naming_symbols.constant_symbols.applicable_kinds = field
+dotnet_naming_symbols.constant_symbols.required_modifiers = const
+
+# Static readonly: PascalCase
+dotnet_naming_rule.static_readonly_rule.symbols = static_readonly_symbols
+dotnet_naming_rule.static_readonly_rule.style = pascal_case_style
+dotnet_naming_rule.static_readonly_rule.severity = warning
+dotnet_naming_symbols.static_readonly_symbols.applicable_kinds = field
+dotnet_naming_symbols.static_readonly_symbols.required_modifiers = static, readonly
+
+# General Types: PascalCase
+dotnet_naming_rule.pascal_case_rule.symbols = pascal_case_symbols
+dotnet_naming_rule.pascal_case_rule.style = pascal_case_style
+dotnet_naming_rule.pascal_case_rule.severity = warning
+dotnet_naming_symbols.pascal_case_symbols.applicable_kinds = namespace, class, struct, enum, delegate, event, method, property
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+
+# Parameters & Locals: camelCase
+dotnet_naming_rule.camel_case_rule.symbols = camel_case_symbols
+dotnet_naming_rule.camel_case_rule.style = camel_case_style
+dotnet_naming_rule.camel_case_rule.severity = warning
+dotnet_naming_symbols.camel_case_symbols.applicable_kinds = parameter, local
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Suppressions
+# Localization
+dotnet_diagnostic.CA1303.severity = none
+# Null checks
+dotnet_diagnostic.CA1062.severity = none
+# LoggerMessage delegates
+dotnet_diagnostic.CA1848.severity = none
+# ConfigureAwait(false)
+dotnet_diagnostic.CA2007.severity = none

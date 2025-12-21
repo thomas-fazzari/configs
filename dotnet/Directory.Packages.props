@@ -1,0 +1,20 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+
+  <ItemGroup Label="Analyzers">
+    <GlobalPackageReference Include="CSharpier.MSBuild" Version="1.2.3" PrivateAssets="all" />
+    <GlobalPackageReference Include="Roslynator.Analyzers" Version="4.15.0" PrivateAssets="all" />
+    <GlobalPackageReference
+      Include="SonarAnalyzer.CSharp"
+      Version="10.17.0.131074"
+      PrivateAssets="all"
+    />
+  </ItemGroup>
+
+  <ItemGroup Label="Packages">
+    <!-- <PackageVersion Include="placeholder" Version="placeholder" /> -->
+  </ItemGroup>
+</Project>
