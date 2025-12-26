@@ -2,7 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.fontFamily": "'Anonymous Pro', Consolas",
+  "editor.fontFamily": "'JetBrains Mono', Hack",
   "editor.fontSize": 14,
   "editor.lineHeight": 0,
   "editor.tabSize": 2,
@@ -17,10 +17,9 @@
   "editor.suggestSelection": "first",
   "editor.inlineSuggest.enabled": true,
 
-  "workbench.colorTheme": "Pitch Black",
+  "workbench.colorTheme": "Jetbrains Fleet",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
-  "workbench.statusBar.visible": false,
   "workbench.tips.enabled": false,
   "workbench.secondarySideBar.defaultVisibility": "hidden",
   "workbench.settings.applyToAllProfiles": [],
@@ -96,6 +95,8 @@
     "svelte": "html"
   },
 
+  "prettier.documentSelectors": ["**/*.svelte"],
+
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -123,9 +124,44 @@
   "[xml]": {
     "editor.defaultFormatter": "csharpier.csharpier-vscode"
   },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoImportCompletions": true,
 
   "security.promptForLocalFileProtocolHandling": false,
   "makefile.configureOnOpen": true,
   "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "default"
+  "claudeCode.selectedModel": "default",
+  "workbench.startupEditor": "none",
+  "git.enableSmartCommit": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": {
+        "id": "terminal-cmd"
+      }
+    },
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": ["--login", "-i"]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
